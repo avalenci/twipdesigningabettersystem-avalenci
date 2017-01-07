@@ -48,12 +48,20 @@ public class Main {
                                 continue;
                             }
                             System.out.println("What would you like to do " + firstName + "?\n" +
-                                    "(A) Enter additional information.\n(B) Get information.\n(C) Exit.");
+                                    "(A) Enter additional information.\n(B) Get information.\n(C) Get a membership.\n(D) Exit.");
                             while (all) {
                                 answer = input.nextLine();
                                 if (answer.equalsIgnoreCase("A"));
                                 else if (answer.equalsIgnoreCase("B"));
                                 else if (answer.equalsIgnoreCase("C")) {
+                                    if (i[0]); //Regular Customer
+                                    else if (i[1] || i[3]) { //Member
+                                        System.out.println("You are already a member.\nPlease pick another option.");
+                                        continue;
+                                    }
+                                    else; //Employee
+                                }
+                                else if (answer.equalsIgnoreCase("D")) {
                                     all = false;
                                     break;
                                 }
