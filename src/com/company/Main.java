@@ -23,8 +23,8 @@ public class Main {
                         continue;
                     }
                     else {
-                        System.out.println("What kind of customer are you?\n(A) Regular Customer\n(B) Member\n(C) Employee\n" +
-                                "(D) Member & Employee");
+                        System.out.println("What kind of customer are you?\n(A) Regular Customer\n" +
+                                "(B) Member\n(C) Employee\n" + "(D) Member & Employee");
                         while (all) { //third
                             String answer = input.nextLine();
                             Customer you;
@@ -48,9 +48,10 @@ public class Main {
                                 System.out.println("Try again.");
                                 continue;
                             }
-                            System.out.println("What would you like to do " + firstName + "?\n" +
-                                    "(A) Enter additional information.\n(B) Get information.\n(C) Get a membership.\n(D) Exit.");
                             while (all) { //fourth
+                                System.out.println("What would you like to do " + firstName + "?\n" +
+                                        "(A) Enter additional information.\n(B) Get information.\n" +
+                                        "(C) Get a membership.\n(D) Exit.");
                                 answer = input.nextLine();
                                 if (answer.equalsIgnoreCase("A"));
                                 else if (answer.equalsIgnoreCase("B")) {
@@ -62,10 +63,48 @@ public class Main {
                                                     "(A) Membership\n(B) Classes\n(C) Retail Discount\n(D) Aquatics\n" +
                                                     "(E) Personal Trainer");
                                             while (all) { //sixth
-
+                                                answer = input.nextLine();
+                                                if (answer.equalsIgnoreCase("A")) {
+                                                    if (you.membership == 1) {
+                                                        System.out.println("Membership costs a one time" + " payment " +
+                                                                "of 1 dollar as long as you are an employee.\n");
+                                                    }
+                                                    else if (you.membership == 0)
+                                                        System.out.println("You are already a member.\n");
+                                                    else
+                                                        System.out.println("Membership costs $65 per month.\n");
+                                                }
+                                                else if (answer.equalsIgnoreCase("B")) {
+                                                    System.out.println("Classes cost $" + you.classes +
+                                                            " per class.\n");
+                                                }
+                                                else if (answer.equalsIgnoreCase("C")) {
+                                                    if (you.retail == 0)
+                                                        System.out.println("You do not apply for a discount.\n");
+                                                    else
+                                                        System.out.println("You get " + you.retail +
+                                                                "% off at the shop.\n");
+                                                }
+                                                else if (answer.equalsIgnoreCase("D")) {
+                                                    if (you.aquatics == 0)
+                                                        System.out.println("You do not apply for aquatics.\n");
+                                                    else
+                                                        System.out.println("Aquatics cost $" + you.aquatics + ".\n");
+                                                }
+                                                else if (answer.equalsIgnoreCase("E")) {
+                                                    System.out.println("A personal trainer costs $" +
+                                                            you.trainer + ".\n");
+                                                }
+                                                else {
+                                                    System.out.println("Try again.");
+                                                    continue;
+                                                }
+                                                break;
                                             }
                                         }
-                                        else if (answer.equalsIgnoreCase("B"));
+                                        else if (answer.equalsIgnoreCase("B")) {
+                                            System.out.println("This month you will be charged $" + you.bill + ".\n");
+                                        }
                                         else {
                                             System.out.println("Try again.");
                                             continue;
@@ -82,12 +121,16 @@ public class Main {
                                         you.trainer = 20;
                                         i[0] = false;
                                         i[1] = true;
+                                        you.bill += 65;
+                                        System.out.println("Congratulations! You are now a member.\n");
                                     }
                                     else if (i[2]) { //Employee
                                         you.membership = 0;
                                         you.retail = 20;
                                         i[2] = false;
                                         i[3] = true;
+                                        you.bill += 1;
+                                        System.out.println("Congratulations! You are now a member.\n");
                                     }
                                     else {
                                         System.out.println("You are already a member.\nPlease pick another option.");

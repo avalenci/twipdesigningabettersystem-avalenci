@@ -4,6 +4,7 @@ public class Customer {
     Customer(String f, String l) {
         firstName = f;
         lastName = l;
+        bill = 0;
     }
     String firstName;
     String lastName;
@@ -12,4 +13,5 @@ public class Customer {
     int retail;
     int aquatics;
     int trainer;
+    int bill;
 }
