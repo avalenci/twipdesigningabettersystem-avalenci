@@ -12,7 +12,6 @@ public class Main {
             String firstName = input.nextLine();
             if (firstName.contains(" ")) {
                 System.out.println("No spaces please.\nTry again.");
-                continue;
             }
             else {
                 System.out.println("Now type in your last name.");
@@ -20,7 +19,6 @@ public class Main {
                     String lastName = input.nextLine();
                     if (lastName.contains(" ")) {
                         System.out.println("No spaces please.\nTry again.");
-                        continue;
                     }
                     else {
                         System.out.println("What kind of customer are you?\n(A) Regular Customer\n" +
@@ -48,68 +46,73 @@ public class Main {
                                 System.out.println("Try again.");
                                 continue;
                             }
-                            while (all) { //fourth
+                            while (true) { //fourth
                                 System.out.println("What would you like to do " + firstName + "?\n" +
                                         "(A) Enter additional information.\n(B) Get information.\n" +
                                         "(C) Get a membership.\n(D) Exit.");
                                 answer = input.nextLine();
-                                if (answer.equalsIgnoreCase("A"));
+                                if (answer.equalsIgnoreCase("A")) {
+                                    System.out.println("What information would you like to give?\n" +
+                                            "(A) Weight\n(B) SSN\n(C) Visits");
+                                    answer = input.nextLine();
+                                    if (answer.equalsIgnoreCase("A")) {
+                                        System.out.println("Enter your weight in pounds please.");
+                                        if (input.hasNextInt()) {
+                                            you.weight = input.nextInt();
+                                        }
+                                    }
+                                    else if (answer.equalsIgnoreCase("B")) {
+                                        System.out.println("Please enter your social security number.");
+                                        if (input.hasNextInt()) {
+                                            you.SSN = input.nextInt();
+                                        }
+                                    }
+                                    else if (answer.equalsIgnoreCase("C")) {
+                                        System.out.println("Please enter your number of visits this month.");
+                                        if (input.hasNextInt()) {
+                                            you.visits = input.nextInt();
+                                        }
+                                    }
+                                }
                                 else if (answer.equalsIgnoreCase("B")) {
                                     System.out.println("What would you like to know?\n(A) Costs\n(B) Totals");
-                                    while (all) { //fifth
+                                    answer = input.nextLine();
+                                    if (answer.equalsIgnoreCase("A")) {
+                                        System.out.println("What would you like to know the cost of?\n" +
+                                                "(A) Membership\n(B) Classes\n(C) Retail Discount\n(D) Aquatics\n" +
+                                                "(E) Personal Trainer");
                                         answer = input.nextLine();
                                         if (answer.equalsIgnoreCase("A")) {
-                                            System.out.println("What would you like to know the cost of?\n" +
-                                                    "(A) Membership\n(B) Classes\n(C) Retail Discount\n(D) Aquatics\n" +
-                                                    "(E) Personal Trainer");
-                                            while (all) { //sixth
-                                                answer = input.nextLine();
-                                                if (answer.equalsIgnoreCase("A")) {
-                                                    if (you.membership == 1) {
-                                                        System.out.println("Membership costs a one time" + " payment " +
-                                                                "of 1 dollar as long as you are an employee.\n");
-                                                    }
-                                                    else if (you.membership == 0)
-                                                        System.out.println("You are already a member.\n");
-                                                    else
-                                                        System.out.println("Membership costs $65 per month.\n");
-                                                }
-                                                else if (answer.equalsIgnoreCase("B")) {
-                                                    System.out.println("Classes cost $" + you.classes +
-                                                            " per class.\n");
-                                                }
-                                                else if (answer.equalsIgnoreCase("C")) {
-                                                    if (you.retail == 0)
-                                                        System.out.println("You do not apply for a discount.\n");
-                                                    else
-                                                        System.out.println("You get " + you.retail +
-                                                                "% off at the shop.\n");
-                                                }
-                                                else if (answer.equalsIgnoreCase("D")) {
-                                                    if (you.aquatics == 0)
-                                                        System.out.println("You do not apply for aquatics.\n");
-                                                    else
-                                                        System.out.println("Aquatics cost $" + you.aquatics + ".\n");
-                                                }
-                                                else if (answer.equalsIgnoreCase("E")) {
-                                                    System.out.println("A personal trainer costs $" +
-                                                            you.trainer + ".\n");
-                                                }
-                                                else {
-                                                    System.out.println("Try again.");
-                                                    continue;
-                                                }
-                                                break;
-                                            }
+                                            if (you.membership == 1) {
+                                                System.out.println("Membership costs a one time" + " payment " +
+                                                        "of 1 dollar as long as you are an employee.\n");
+                                            } else if (you.membership == 0)
+                                                System.out.println("You are already a member.\n");
+                                            else
+                                                System.out.println("Membership costs $65 per month.\n");
+                                        } else if (answer.equalsIgnoreCase("B")) {
+                                            System.out.println("Classes cost $" + you.classes +
+                                                    " per class.\n");
+                                        } else if (answer.equalsIgnoreCase("C")) {
+                                            if (you.retail == 0)
+                                                System.out.println("You do not apply for a discount.\n");
+                                            else
+                                                System.out.println("You get " + you.retail +
+                                                        "% off at the shop.\n");
+                                        } else if (answer.equalsIgnoreCase("D")) {
+                                            if (you.aquatics == 0)
+                                                System.out.println("You do not apply for aquatics.\n");
+                                            else
+                                                System.out.println("Aquatics cost $" + you.aquatics + ".\n");
+                                        } else if (answer.equalsIgnoreCase("E")) {
+                                            System.out.println("A personal trainer costs $" +
+                                                    you.trainer + ".\n");
+                                        } else {
+                                            break;
                                         }
-                                        else if (answer.equalsIgnoreCase("B")) {
-                                            System.out.println("This month you will be charged $" + you.bill + ".\n");
-                                        }
-                                        else {
-                                            System.out.println("Try again.");
-                                            continue;
-                                        }
-                                        break;
+                                    }
+                                    else if (answer.equalsIgnoreCase("B")) {
+                                        System.out.println("This month you will be charged $" + you.bill + ".\n");
                                     }
                                 }
                                 else if (answer.equalsIgnoreCase("C")) {
@@ -134,7 +137,6 @@ public class Main {
                                     }
                                     else {
                                         System.out.println("You are already a member.\nPlease pick another option.");
-                                        continue;
                                     }
                                 }
                                 else if (answer.equalsIgnoreCase("D")) {
@@ -143,7 +145,6 @@ public class Main {
                                 }
                                 else {
                                     System.out.println("Try again.");
-                                    continue;
                                 }
                             }
                         }

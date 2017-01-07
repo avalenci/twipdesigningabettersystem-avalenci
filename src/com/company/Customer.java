@@ -1,17 +1,20 @@
 package com.company;
 
-public class Customer {
+class Customer {
     Customer(String f, String l) {
         firstName = f;
         lastName = l;
         bill = 0;
     }
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
     int membership;
     int classes;
     int retail;
     int aquatics;
     int trainer;
     int bill;
+    int weight;
+    int SSN;
+    int visits;
 }
