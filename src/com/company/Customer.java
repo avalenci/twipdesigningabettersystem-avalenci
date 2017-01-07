@@ -7,4 +7,9 @@ public class Customer {
     }
     String firstName;
     String lastName;
+    int membership;
+    int classes;
+    int retail;
+    int aquatics;
+    int trainer;
 }

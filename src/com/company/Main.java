@@ -57,8 +57,15 @@ public class Main {
                                     System.out.println("What would you like to know?\n(A) Costs\n(B) Totals");
                                     while (all) { //fifth
                                         answer = input.nextLine();
-                                        if (answer.equalsIgnoreCase("A")) ;
-                                        else if (answer.equalsIgnoreCase("B")) ;
+                                        if (answer.equalsIgnoreCase("A")) {
+                                            System.out.println("What would you like to know the cost of?\n" +
+                                                    "(A) Membership\n(B) Classes\n(C) Retail Discount\n(D) Aquatics\n" +
+                                                    "(E) Personal Trainer");
+                                            while (all) { //sixth
+
+                                            }
+                                        }
+                                        else if (answer.equalsIgnoreCase("B"));
                                         else {
                                             System.out.println("Try again.");
                                             continue;
@@ -67,15 +74,24 @@ public class Main {
                                     }
                                 }
                                 else if (answer.equalsIgnoreCase("C")) {
-                                    if (i[0]); { //Regular Customer
-
+                                    if (i[0]) { //Regular Customer
+                                        you.membership = 0;
+                                        you.classes = 8;
+                                        you.retail = 20;
+                                        you.aquatics = 10;
+                                        you.trainer = 20;
+                                        i[0] = false;
+                                        i[1] = true;
                                     }
-                                    if (i[1] || i[3]) { //Member
+                                    else if (i[2]) { //Employee
+                                        you.membership = 0;
+                                        you.retail = 20;
+                                        i[2] = false;
+                                        i[3] = true;
+                                    }
+                                    else {
                                         System.out.println("You are already a member.\nPlease pick another option.");
                                         continue;
-                                    }
-                                    if (i[2]) { //Employee
-
                                     }
                                 }
                                 else if (answer.equalsIgnoreCase("D")) {
