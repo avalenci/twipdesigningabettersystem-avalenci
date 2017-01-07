@@ -5,9 +5,10 @@ public class Main {
 
     public static void main(String[] args) {
         boolean i[] = new boolean[4];
+        boolean all = true;
         System.out.println("Greetings! Please type in your first name.");
         Scanner input = new Scanner(System.in);
-        while (true) { //first
+        while (all) { //first
             String firstName = input.nextLine();
             if (firstName.contains(" ")) {
                 System.out.println("No spaces please.\nTry again.");
@@ -15,7 +16,7 @@ public class Main {
             }
             else {
                 System.out.println("Now type in your last name.");
-                while (true) { //second
+                while (all) { //second
                     String lastName = input.nextLine();
                     if (lastName.contains(" ")) {
                         System.out.println("No spaces please.\nTry again.");
@@ -24,7 +25,7 @@ public class Main {
                     else {
                         System.out.println("What kind of customer are you?\n(A) Regular Customer\n(B) Member\n(C) Employee\n" +
                                 "(D) Member & Employee");
-                        while (true) { //third
+                        while (all) { //third
                             String answer = input.nextLine();
                             if (answer.equalsIgnoreCase("A")) {
                                 i[0] = true;
@@ -46,8 +47,20 @@ public class Main {
                                 System.out.println("Try again.");
                                 continue;
                             }
-                            while (true) { //fourth
-
+                            System.out.println("What would you like to do " + firstName + "?\n" +
+                                    "(A) Enter additional information.\n(B) Get information.\n(C) Exit.");
+                            while (all) {
+                                answer = input.nextLine();
+                                if (answer.equalsIgnoreCase("A"));
+                                else if (answer.equalsIgnoreCase("B"));
+                                else if (answer.equalsIgnoreCase("C")) {
+                                    all = false;
+                                    break;
+                                }
+                                else {
+                                    System.out.println("Try again.");
+                                    continue;
+                                }
                             }
                         }
                     }
