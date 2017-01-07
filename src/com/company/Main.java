@@ -27,17 +27,22 @@ public class Main {
                                 "(D) Member & Employee");
                         while (all) { //third
                             String answer = input.nextLine();
+                            Customer you;
                             if (answer.equalsIgnoreCase("A")) {
                                 i[0] = true; //Regular Customer
+                                you = new regularCustomer(firstName, lastName);
                             }
                             else if (answer.equalsIgnoreCase("B")) {
                                 i[1] = true; //Member
+                                you = new Member(firstName, lastName);
                             }
                             else if (answer.equalsIgnoreCase("C")) {
                                 i[2] = true; //Employee
+                                you = new Employee(firstName, lastName);
                             }
                             else if (answer.equalsIgnoreCase("D")) {
                                 i[3] = true; //Member & Employee
+                                you = new memberEmployee(firstName, lastName);
                             }
                             else {
                                 System.out.println("Try again.");
@@ -45,11 +50,21 @@ public class Main {
                             }
                             System.out.println("What would you like to do " + firstName + "?\n" +
                                     "(A) Enter additional information.\n(B) Get information.\n(C) Get a membership.\n(D) Exit.");
-                            while (all) {
+                            while (all) { //fourth
                                 answer = input.nextLine();
                                 if (answer.equalsIgnoreCase("A"));
                                 else if (answer.equalsIgnoreCase("B")) {
-
+                                    System.out.println("What would you like to know?\n(A) Costs\n(B) Totals");
+                                    while (all) { //fifth
+                                        answer = input.nextLine();
+                                        if (answer.equalsIgnoreCase("A")) ;
+                                        else if (answer.equalsIgnoreCase("B")) ;
+                                        else {
+                                            System.out.println("Try again.");
+                                            continue;
+                                        }
+                                        break;
+                                    }
                                 }
                                 else if (answer.equalsIgnoreCase("C")) {
                                     if (i[0]); { //Regular Customer
