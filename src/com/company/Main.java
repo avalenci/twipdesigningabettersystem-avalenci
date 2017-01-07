@@ -28,20 +28,16 @@ public class Main {
                         while (all) { //third
                             String answer = input.nextLine();
                             if (answer.equalsIgnoreCase("A")) {
-                                i[0] = true;
-                                regularCustomer you = new regularCustomer(firstName, lastName);
+                                i[0] = true; //Regular Customer
                             }
                             else if (answer.equalsIgnoreCase("B")) {
-                                i[1] = true;
-                                Member you = new Member(firstName, lastName);
+                                i[1] = true; //Member
                             }
                             else if (answer.equalsIgnoreCase("C")) {
-                                i[2] = true;
-                                Employee you = new Employee(firstName, lastName);
+                                i[2] = true; //Employee
                             }
                             else if (answer.equalsIgnoreCase("D")) {
-                                i[3] = true;
-                                memberEmployee you = new memberEmployee(firstName, lastName);
+                                i[3] = true; //Member & Employee
                             }
                             else {
                                 System.out.println("Try again.");
@@ -52,14 +48,20 @@ public class Main {
                             while (all) {
                                 answer = input.nextLine();
                                 if (answer.equalsIgnoreCase("A"));
-                                else if (answer.equalsIgnoreCase("B"));
+                                else if (answer.equalsIgnoreCase("B")) {
+
+                                }
                                 else if (answer.equalsIgnoreCase("C")) {
-                                    if (i[0]); //Regular Customer
-                                    else if (i[1] || i[3]) { //Member
+                                    if (i[0]); { //Regular Customer
+
+                                    }
+                                    if (i[1] || i[3]) { //Member
                                         System.out.println("You are already a member.\nPlease pick another option.");
                                         continue;
                                     }
-                                    else; //Employee
+                                    if (i[2]) { //Employee
+
+                                    }
                                 }
                                 else if (answer.equalsIgnoreCase("D")) {
                                     all = false;
